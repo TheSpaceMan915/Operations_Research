@@ -1,5 +1,5 @@
-package lab1;
-import java.io.File;
+package lab1.connected_component;
+
 import java.util.*;
 
 public class Connected_Component {

@@ -28,4 +28,11 @@ public class Edge implements Comparable<Edge> {
         else if (m_weight > another.m_weight) return 1;
         else return 0;
     }
+
+    public double getWeight() { return m_weight; }
+    public void print()
+    {
+        String temp = String.format("%10s %10s %10s",m_vert1,m_vert2,m_weight);
+        System.out.println(temp);
+    }
 }

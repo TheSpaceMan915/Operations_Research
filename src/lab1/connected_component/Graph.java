@@ -1,4 +1,4 @@
-package lab1;
+package lab1.connected_component;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,7 +22,7 @@ public class Graph {
         { m_arr_lists[i] = new ArrayList<>(); }
     }
 
-    private void fillGraph(File file_obj)
+    public void fillGraph(File file_obj)
     {
         try
         {
@@ -64,7 +64,7 @@ public class Graph {
         final int vert_numb = 8;
 
         Graph graph_obj = new Graph(vert_numb);
-        File path = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab1\\Data.txt");
+        File path = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab1\\connected_component\\Data.txt");
         graph_obj.fillGraph(path);
     }
     }
