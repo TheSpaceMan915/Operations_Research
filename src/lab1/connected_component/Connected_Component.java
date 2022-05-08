@@ -6,7 +6,7 @@ public class Connected_Component {
 
     private boolean[] m_arr_flags;
     private int[] m_arr_id;
-    private int m_counter;
+    private int m_counter = 0;
 
     public Connected_Component(Graph graph_obj)
     {

@@ -21,6 +21,10 @@ public class Directed_Graph {
 
         for (int i = 0; i < vertices_number; i++)
         { m_arr_lists[i] = new ArrayList<>(); }
+
+
+        File path = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab1\\strongly_connected_component\\Data2.txt");
+        fillGraph(path);
     }
 
     public void fillGraph(File file_obj)
@@ -51,6 +55,19 @@ public class Directed_Graph {
     {
         m_arr_lists[vert1].add(vert2);              //just add vert2 to adj. vertices of vert1
         m_edges_number++;                          //increment the number of edges
+    }
+
+    //reverse the graph meaning swap its vertices
+    public Directed_Graph reverseGraph()
+    {
+        Directed_Graph graph = new Directed_Graph(m_vertices_number);
+
+        for (int vert1 =  0; vert1 < getVerticesNumber(); vert1++)
+        {
+            for (int vert2 : getAdjacencyVertices(vert1))
+            {graph.addEdge(vert2,vert1); }
+        }
+         return graph;
     }
 
    // public ArrayList<Integer> reverse

@@ -24,37 +24,19 @@ public class Order {
         for (int vert = 0; vert < graph.getVerticesNumber(); vert++)
         {
             if (!m_arr_flags[vert])
-            { breadthFirstSearch(graph,vert); }
+            { depthFirstSearch(graph,vert); }
         }
     }
 
-    public void breadthFirstSearch(Directed_Graph graph_obj, int source)
+    public void depthFirstSearch(Directed_Graph graph_obj, int vert)
     {
-        Queue<Integer> queue_obj = new LinkedList<>();
+        m_preorder_vert.add(vert);
+        m_arr_flags[vert] = true;
+        for (int w : graph_obj.getAdjacencyVertices(vert))
+        { if (!m_arr_flags[w]) depthFirstSearch(graph_obj,w); }
 
-        queue_obj.add(source);
-        m_arr_flags[source] = true;
-
-        while (!queue_obj.isEmpty())
-        {
-
-            int vert = queue_obj.remove();
-            m_preorder_vert.add(vert);
-
-            for (int w : graph_obj.getAdjacencyVertices(vert))
-            {
-                if (!m_arr_flags[w])
-                {
-                    queue_obj.add(w);
-                    m_arr_flags[w] = true;
-                }
-                else
-                {
-                    m_postorder_vert.add(w);
-                    m_reverse_vert.push(w);
-                }
-            }
-        }
+        m_postorder_vert.add(vert);
+        m_reverse_vert.push(vert);
     }
 
     public Queue<Integer> getPreorder() { return m_preorder_vert; }
@@ -63,13 +45,5 @@ public class Order {
 
     public static void main (String[] args)
     {
-        final int vert_numb = 13;
-
-        Directed_Graph graph_obj = new Directed_Graph(vert_numb);
-        File path = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab1\\strongly_connected_component\\Data2.txt");
-        graph_obj.fillGraph(path);
-
-        Order ord_obj = new Order(graph_obj);
-        System.out.println("Check");
     }
 }
