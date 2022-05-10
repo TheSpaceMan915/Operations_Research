@@ -41,8 +41,6 @@ public class Minimum_Spanning_Tree {
     {
         final int vert_numb = 8;
         Weighted_Graph graph_obj = new Weighted_Graph(vert_numb);
-        File file = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab2_Kruskal_Algorithm\\Edges.txt");
-        graph_obj.fillGraph(file);
 
         Minimum_Spanning_Tree tree = new Minimum_Spanning_Tree(graph_obj);
         ArrayList<Edge> res_tree = tree.getTree();
