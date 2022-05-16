@@ -2,10 +2,10 @@ package lab4_Push_Relabel_Algorithm;
 
 public class Edge {
 
-    private int m_vert1;
-    private int m_vert2;
-    private int m_flow;
-    private int m_capacity;
+    int m_vert1;
+    int m_vert2;
+    int m_flow;
+    int m_capacity;
 
     public Edge(int vert1, int vert2, int flow, int capacity)
     {
@@ -15,7 +15,7 @@ public class Edge {
         m_capacity = capacity;
     }
 
-    public int getCapacity() {
+   /* public int getCapacity() {
         return m_capacity;
     }
 
@@ -30,4 +30,8 @@ public class Edge {
     public int getEndVert() {
         return m_vert2;
     }
+
+    public void setFlow(int flow) {
+        m_flow = flow;
+    }*/
 }
