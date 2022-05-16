@@ -14,7 +14,7 @@ public class ShortestPaths {
 
         for (int j = 0; j < graph.getVerticesNumber(); j++)
         {
-           distTo[j] = Double.MAX_VALUE;
+           distTo[j] = Double.POSITIVE_INFINITY;
         }
         distTo[source] = 0.0;
 
@@ -30,7 +30,6 @@ public class ShortestPaths {
         }
 
     }
-
 
     public void checkDist(DirectedEdge edge)
     {
@@ -49,12 +48,25 @@ public class ShortestPaths {
         }
     }
 
+    public void printShortestPaths()
+    {
+        System.out.println("----------------------------------");
+        System.out.printf("%15s %15s","Vertex","Distance" + '\n');
+        System.out.println("----------------------------------");
+
+        for (int i = 0; i < distTo.length; i++)
+        {
+            System.out.printf("%15s %15s",i,distTo[i]);
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
 
         final int vert_numb = 8;
         DirectedWeightedGraph graph_obj = new DirectedWeightedGraph(vert_numb);
 
-        ShortestPaths paths = new ShortestPaths(graph_obj,0);
+        ShortestPaths paths_obj = new ShortestPaths(graph_obj,0);
+        paths_obj.printShortestPaths();
     }
 }

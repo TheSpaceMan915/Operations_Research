@@ -20,6 +20,9 @@ public class Graph {
 
         for (int i = 0; i < vertices_number; i++)
         { m_arr_lists[i] = new ArrayList<>(); }
+
+        File path = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab1\\connected_component\\Data.txt");
+        this.fillGraph(path);
     }
 
     public void fillGraph(File file_obj)
@@ -64,7 +67,6 @@ public class Graph {
         final int vert_numb = 8;
 
         Graph graph_obj = new Graph(vert_numb);
-        File path = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab1\\connected_component\\Data.txt");
-        graph_obj.fillGraph(path);
+
     }
     }

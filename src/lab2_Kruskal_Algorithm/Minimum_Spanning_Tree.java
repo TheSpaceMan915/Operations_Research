@@ -1,6 +1,5 @@
 package lab2_Kruskal_Algorithm;
 
-import java.io.File;
 import java.util.*;
 
 public class Minimum_Spanning_Tree {

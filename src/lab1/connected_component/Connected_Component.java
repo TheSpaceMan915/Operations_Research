@@ -45,13 +45,26 @@ public class Connected_Component {
             }
         }
     }
+    public void printComponents()
+    {
+        System.out.println("--------------------------");
+        System.out.printf("%10s %10s","Vertex","Id" + '\n');
+        System.out.println("--------------------------");
+
+        for (int i = 0; i < m_arr_id.length; i++)
+        {
+            System.out.printf("%10s %10s",i,m_arr_id[i]);
+            System.out.println();
+        }
+    }
 
     public static void main (String[] args)
     {
         final int vert_numb = 8;
 
         Graph graph1 = new Graph(vert_numb);
-        Connected_Component component = new Connected_Component(graph1);
+        Connected_Component components_obj = new Connected_Component(graph1);
+        components_obj.printComponents();
 
         System.out.println("Click");
 

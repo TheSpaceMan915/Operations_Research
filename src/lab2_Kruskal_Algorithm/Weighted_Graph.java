@@ -5,11 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Weighted_Graph {
 
     private final int m_vertices_number;
-
     private ArrayList<Edge> m_arr_all_edges;
     private final ArrayList<Edge>[] m_arr_lists;
     //массив листов c рёбрами. Индекс массива - номер вершины, с которой соединены эти рёбра
@@ -25,6 +25,7 @@ public class Weighted_Graph {
 
         File file = new File("C:\\Users\\nikit\\IdeaProjects\\Operations_Research\\src\\lab2_Kruskal_Algorithm\\Edges.txt");
         this.fillGraph(file);
+        Collections.sort(m_arr_all_edges);
     }
 
     public void addEdge(Edge edge)

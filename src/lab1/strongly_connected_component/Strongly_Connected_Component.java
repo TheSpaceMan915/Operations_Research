@@ -50,7 +50,7 @@ public class Strongly_Connected_Component {
     public void printComponents()
     {
         System.out.println("--------------------------");
-        System.out.printf("%5s %5s","Vertex","Id" + '\n');
+        System.out.printf("%10s %10s","Vertex","Id" + '\n');
         System.out.println("--------------------------");
 
         for (int i = 0; i < m_arr_id.length; i++)
@@ -63,7 +63,7 @@ public class Strongly_Connected_Component {
     //the starting point is here
     public static void main (String[] args)
     {
-        final int vert_numb = 13;
+        final int vert_numb = 8;
 
         Directed_Graph graph_obj = new Directed_Graph(vert_numb);
         Strongly_Connected_Component comp_obj = new Strongly_Connected_Component(graph_obj);
