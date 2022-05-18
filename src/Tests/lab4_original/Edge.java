@@ -1,4 +1,4 @@
-package lab4_Push_Relabel_Algorithm;
+package Tests.lab4_original;
 
 public class Edge {
 
